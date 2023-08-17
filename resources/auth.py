@@ -20,3 +20,7 @@ class Login(Resource):
         data = request.get_json()
         user = AuthManager.login(data)
         return UserResponseSchema().dump(user), 200
+
+class Home(Resource):
+    def get(self):
+        return make_response(render_template('index.html'))
