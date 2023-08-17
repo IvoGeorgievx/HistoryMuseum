@@ -1,4 +1,4 @@
-from flask import request
+from flask import Flask, request, render_template, make_response
 from flask_restful import Resource
 
 from managers.auth import AuthManager
@@ -10,6 +10,9 @@ class Register(Resource):
         data = request.get_json()
         user = AuthManager.register(data)
         return UserResponseSchema().dump(user), 201
+
+    def get(self):
+        return make_response(render_template('register.html'))
 
 
 class Login(Resource):

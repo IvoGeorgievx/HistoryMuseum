@@ -7,7 +7,7 @@ from flask_restful import Api
 from db import db
 from resources.routes import routes
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='frontend/templates', static_folder='frontend/static')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = (
     f"postgresql://{config('DB_USER')}:{config('DB_PASSWORD')}"
