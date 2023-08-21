@@ -40,4 +40,10 @@ async function handleData() {
 
 }
 
-sendRegisterData()
+// function loadFirst() {
+//     window.addEventListener('load', () => {
+//         const div = document.querySelector('.container')
+//         div.style.display = 'block'
+//     })
+// }
+// sendRegisterData()
