@@ -11,3 +11,10 @@ const observer = new IntersectionObserver(entries => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((element) => observer.observe(element))
 
+const toggleElement = document.querySelector('#nav-bars')
+const mainNav = document.querySelector('.main-nav')
+
+toggleElement.addEventListener('click', () => {
+    mainNav.style.display = (mainNav.style.display === 'block') ? 'none' : 'block';
+})
+

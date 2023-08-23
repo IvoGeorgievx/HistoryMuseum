@@ -112,6 +112,15 @@ nav a:hover::before {
 
     .main-nav {
         display: none;
+        position: absolute;
+        top: 90px;
+        text-align: center;
+        background-color: #44445a;
+        border-radius: 15px;
+    }
+
+    .main-nav a {
+        display: block;
     }
 
     .auth-nav li {
