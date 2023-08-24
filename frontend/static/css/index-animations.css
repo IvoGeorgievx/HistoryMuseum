@@ -24,16 +24,16 @@
         transform: rotate(0);
     }
     20% {
-        transform: rotate(-1.5deg);
+        transform: rotate(-1.2deg);
     }
     40% {
-        transform: rotate(1.5deg);
+        transform: rotate(1.2deg);
     }
     60% {
-        transform: rotate(-1.5deg);
+        transform: rotate(-1.2deg);
     }
     80% {
-        transform: rotate(1.5deg);
+        transform: rotate(1.2deg);
     }
 }
 
