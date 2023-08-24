@@ -17,7 +17,7 @@ section {
     display: grid;
     place-items: center;
     align-content: center;
-    min-height: 101vh;
+    min-height: 100vh;
     margin-bottom: 20px;
 }
 
