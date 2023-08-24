@@ -22,8 +22,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+
 
 .page-content {
     display: flex;
@@ -31,6 +31,7 @@ body {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap-reverse;
+    min-width: 580px;
 }
 
 .company, .employee {

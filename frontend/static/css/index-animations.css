@@ -39,13 +39,13 @@
 
 @keyframes glowing {
     0% {
-        box-shadow: 0 0 1.3em rgba(166, 166, 51, 0.5);
+        box-shadow: 0 0 1.1em rgba(166, 166, 51, 0.5);
     }
     50% {
-        box-shadow: 0 0 2.3em rgba(166, 166, 51, 0.9);
+        box-shadow: 0 0 2em rgba(166, 166, 51, 0.7);
     }
     100% {
-        box-shadow: 0 0 1.3em rgba(166, 166, 51, 0.5);
+        box-shadow: 0 0 1.1em rgba(166, 166, 51, 0.5);
     }
 }
 
