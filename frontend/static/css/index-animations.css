@@ -1,0 +1,63 @@
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.2);
+    }
+    85% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes flipUp {
+    0% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes shakeElement {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    20% {
+        transform: rotate(-1.5deg);
+    }
+    40% {
+        transform: rotate(1.5deg);
+    }
+    60% {
+        transform: rotate(-1.5deg);
+    }
+    80% {
+        transform: rotate(1.5deg);
+    }
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 1.3em rgba(166, 166, 51, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 2.3em rgba(166, 166, 51, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 1.3em rgba(166, 166, 51, 0.5);
+    }
+}
+
+@keyframes movingArrow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(8px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+
+}

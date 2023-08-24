@@ -18,4 +18,8 @@ toggleElement.addEventListener('click', () => {
     mainNav.style.display = (mainNav.style.display === 'block') ? 'none' : 'block';
 })
 
+const scrollDownBtn = document.querySelector('.scroll-btn')
+scrollDownBtn.addEventListener('click', () => {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+})
 

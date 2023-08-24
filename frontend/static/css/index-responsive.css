@@ -1,0 +1,49 @@
+@media (width <= 820px) {
+    body {
+        min-width: 400px;
+        font: 13px/1.5 'PT Sans', sans-serif;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 90px;
+        text-align: center;
+        background-color: #44445a;
+        border-radius: 15px;
+
+        animation-name: scaleIn;
+        animation-duration: 0.3s;
+        animation-delay: 0.18s;
+        animation-fill-mode: backwards;
+    }
+
+
+    .main-nav a {
+        display: block;
+        padding: 1rem;
+        margin: 10px 5px;
+        z-index: 999;
+    }
+
+    .auth-nav li {
+        margin: 0 0.3rem;
+    }
+
+    .auth-nav li a {
+        padding: 1rem;
+        font-size: 1.3rem;
+    }
+
+    nav {
+        margin: 0 1rem;
+        /*padding: 0 2rem;*/
+    }
+
+    #nav-bars {
+        display: block;
+        cursor: pointer;
+        margin-left: 3rem;
+        font-size: 1.5rem;
+    }
+}
