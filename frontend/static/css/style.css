@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Courgette&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 @import "register.css";
 
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.2);
+    }
+    85% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -24,13 +37,12 @@ section {
     margin-bottom: 20px;
 }
 
+
 .hidden {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
     transition: all 1s;
-
-
 }
 
 .show {
@@ -39,12 +51,21 @@ section {
     transform: translateX(0);
 }
 
+header {
+    position: fixed;
+    top: 0;
+    z-index: 55;
+    width: 100%;
+    right: 0;
+}
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    z-index: 2;
+
 }
 
 .main-nav {
@@ -103,6 +124,43 @@ nav a:hover::before {
     display: none;
 }
 
+#welcome-section {
+    background-image: url("../images/fsection-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10em;
+    position: relative;
+
+    color: rgba(255, 255, 255, 1);
+}
+
+#welcome-section::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; /* Place it behind the content */
+}
+
+#welcome-section h1 {
+    font-size: 6rem;
+    /*font-family: 'Abril Fatface', cursive;*/
+    margin-bottom: 1rem;
+    letter-spacing: 5px;
+}
+
+.animated-heading span {
+    animation-name: scaleIn;
+    animation-delay: 0.4s;
+}
 
 @media (width <= 820px) {
     body {
@@ -117,10 +175,19 @@ nav a:hover::before {
         text-align: center;
         background-color: #44445a;
         border-radius: 15px;
+
+        animation-name: scaleIn;
+        animation-duration: 0.3s;
+        animation-delay: 0.18s;
+        animation-fill-mode: backwards;
     }
+
 
     .main-nav a {
         display: block;
+        padding: 1rem;
+        margin: 10px 5px;
+        z-index: 999;
     }
 
     .auth-nav li {
