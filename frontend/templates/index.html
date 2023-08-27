@@ -29,28 +29,32 @@
     </nav>
 </header>
 {% block content %}
-<section class="hidden" id="welcome-section">
-    <h1 class="animated-heading">
-        <span>J</span>
-        <span>O</span>
-        <span>B</span>
-        <span>S</span>
-        <span>P</span>
-        <span>O</span>
-        <span>T</span>
-    </h1>
-    <button class="scroll-btn"><i class="fa-solid fa-arrow-right"></i>GET STARTED</button>
-</section>
-
-<section class="hidden">
-    <h1>Hello BRO</h1>
-    <p>LAME SITE</p>
-
-</section>
-<section class="hidden">
-    <h1>Hello BRO</h1>
-    <p>LAME SITE</p>
-</section>
+    <section class="hidden" id="welcome-section">
+        <h1 class="animated-heading">
+            <span>J</span>
+            <span>O</span>
+            <span>B</span>
+            <span>S</span>
+            <span>P</span>
+            <span>O</span>
+            <span>T</span>
+        </h1>
+        <button class="scroll-btn"><i class="fa-solid fa-arrow-right"></i>GET STARTED</button>
+    </section>
+    <section class="hidden first-middle">
+        <div class="img-wrapper">
+            <img src="{{ url_for('static', filename='images/first-header.jpg') }}" alt="man-with-laptop">
+        </div>
+    <div class="text-wrapper">
+        <h2>Find your dream job</h2>
+        <p>Are you ready for a change?</p>
+        <p>JobSpot will help you discover your perfect career fit.</p>
+    </div>
+    </section>
+    <section class="hidden">
+        <h1>Hello BRO</h1>
+        <p>LAME SITE</p>
+    </section>
 
 {% endblock %}
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
