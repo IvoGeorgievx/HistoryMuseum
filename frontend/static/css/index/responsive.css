@@ -53,6 +53,7 @@
 
     #welcome-section {
         gap: 7.5em;
+        /*margin-bottom: 4rem;*/
     }
 
     #welcome-section h1 {
@@ -69,5 +70,39 @@
     .scroll-btn {
         font-size: 1.2rem;
         animation: none;
+    }
+}
+
+@media (max-width: 1120px) {
+
+    .first-middle,
+    .second-middle {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding-bottom: 4em;
+    }
+
+    .first-middle .img-wrapper img,
+    .second-middle .img-wrapper img {
+        min-width: 250px;
+    }
+
+    .first-middle .text-wrapper h2,
+    .second-middle .text-wrapper h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        letter-spacing: 0.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .first-middle .text-wrapper p,
+    .second-middle .text-wrapper p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .second-middle {
+        flex-direction: column-reverse;
     }
 }

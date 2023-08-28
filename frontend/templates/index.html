@@ -45,19 +45,37 @@
         <div class="img-wrapper">
             <img src="{{ url_for('static', filename='images/first-header.jpg') }}" alt="man-with-laptop">
         </div>
-    <div class="text-wrapper">
-        <h2>Find your dream job</h2>
-        <p>Are you ready for a change?</p>
-        <p></p>
-        <p>JobSpot will help you discover your perfect career fit.</p>
-    </div>
+        <div class="text-wrapper">
+            <h2>Find your dream job.</h2>
+            <p>Are you ready for a change?</p>
+            <p>JobSpot will help you discover your perfect career fit.</p>
+            <p><a href="#">Register</a> so you can upload your CV or just <a href="#">Browse</a> through
+                the offers.</p>
+        </div>
     </section>
-    <section class="hidden">
-        <h1>Hello BRO</h1>
-        <p>LAME SITE</p>
+    <section class="hidden second-middle">
+        <div class="text-wrapper">
+            <h2>Expand your team.</h2>
+            <p>Are you looking for new team members?</p>
+            <p>Here you can post your job ads and select the candidate you see fit.</p>
+            <p><a href="#">Register</a> your company here or <a href="#">Contact</a> us for more information.</p>
+        </div>
+        <div class="img-wrapper">
+            <img src="{{ url_for('static', filename='images/hand-shake.jpg') }}" alt="hand-shake">
+        </div>
     </section>
 
 {% endblock %}
+<footer class="index-footer">
+    <ul class="icons">
+        <li><a href="https://github.com/IvoGeorgievx"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/ivaylo-georgiev-9a5882207/"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+
+    </ul>
+</footer>
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 </body>
