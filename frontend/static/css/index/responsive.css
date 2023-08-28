@@ -105,4 +105,8 @@
     .second-middle {
         flex-direction: column-reverse;
     }
+
+    .index-footer .icons li {
+        margin-right: 2.5rem;
+    }
 }
