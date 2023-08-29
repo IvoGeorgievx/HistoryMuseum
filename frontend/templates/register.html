@@ -14,32 +14,30 @@
 </head>
 <body>
 {% block content %}
-<div class="container">
-{#    <h1>Who are you ?</h1>#}
-    <div class="page-content">
-        <div class="company">
-            <div class="company-logo">
-                <i class="fa-solid fa-building"></i>
+    <div class="container">
+        <h1>Create an account</h1>
+        <div class="page-content">
+            <div class="company">
+                <div class="company-logo">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <div class="company-content">
+                    <h2>Company</h2>
+                    {#            <a href="{{ url_for('company_register') }}">Register</a>#}
+                </div>
             </div>
-            <div class="company-content">
-                <h2>Company</h2>
-                <p>Register your company to find the best employee for your needs.</p>
-                {#            <a href="{{ url_for('company_register') }}">Register</a>#}
+            <div class="employee">
+                <div class="employee-logo">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="employee-content">
+                    <h2>Employee</h2>
+                    {#            <a href="{{ url_for('employee_register') }}">Register</a>#}
+                </div>
             </div>
-        </div>
-        <div class="employee">
-            <div class="employee-logo">
-                <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <div class="employee-content">
-                <h2>Employee</h2>
-                <p>Register as an employee to find the job that matches your dreams</p>
-                {#            <a href="{{ url_for('employee_register') }}">Register</a>#}
-            </div>
-        </div>
 
+        </div>
     </div>
-</div>
 {% endblock %}
 
 </body>

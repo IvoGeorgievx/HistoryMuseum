@@ -9,27 +9,58 @@
 
 body {
     font: 16px/1.5 'PT Sans', sans-serif;
+}
 
-
+.container::before {
+    content: "";
+    background-image: url("../../images/reg-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
 }
 
 .container {
-    background-image: url("../images/reg-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 9em;
 }
 
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:9em;
+
+}
+
+.container h1 {
+    font-size: 5rem;
+    letter-spacing: 5px;
+    color: #C2C22FFF;
+
+}
 
 .page-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 4rem;
     flex-wrap: wrap-reverse;
     min-width: 580px;
 }
@@ -40,7 +71,6 @@ body {
     justify-content: space-evenly;
     flex-direction: column;
     text-align: center;
-    border: 1px solid black;
     padding: 2.5rem;
     gap: 1rem;
     min-width: 340px;
