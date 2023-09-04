@@ -22,8 +22,13 @@
         </ul>
         <div class="auth-nav">
             <ul>
+                <li id="reg-dropdown"><a href="http://127.0.0.1:5000/register">Register</a>
+                    <ul class="testing1">
+                        <li>Job Applicant</li>
+                        <li>Company</li>
+                    </ul>
+                </li>
                 <li><a href="login">Login</a></li>
-                <li><a href="http://127.0.0.1:5000/register">Register</a></li>
             </ul>
         </div>
     </nav>
@@ -67,16 +72,17 @@
 
 {% endblock %}
 {% block footer %}
-<footer class="index-footer">
-    <ul class="icons">
-        <li><a href="https://github.com/IvoGeorgievx"><i class="fa-brands fa-github"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/ivaylo-georgiev-9a5882207/"><i class="fa-brands fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+    <footer class="index-footer">
+        <ul class="icons">
+            <li><a href="https://github.com/IvoGeorgievx"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/ivaylo-georgiev-9a5882207/"><i
+                    class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
 
-    </ul>
-</footer>
+        </ul>
+    </footer>
 {% endblock %}
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 

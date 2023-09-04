@@ -108,6 +108,28 @@ nav a:hover::before {
     display: none;
 }
 
+#reg-dropdown {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.testing1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    border-radius: 15px;
+    top: 100%;
+    width: 12rem;
+    background-color: #27272c;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    z-index: 2;
+}
+
 #welcome-section {
     background-image: url("../../images/fsection-bg.jpg");
     background-size: cover;

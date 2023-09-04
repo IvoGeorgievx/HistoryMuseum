@@ -23,3 +23,5 @@ scrollDownBtn.addEventListener('click', () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
 })
 
+const regDropDown = document.querySelector("#reg-dropdown")
+
