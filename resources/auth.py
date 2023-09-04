@@ -24,6 +24,7 @@ class Login(Resource):
     def get(self):
         return make_response(render_template('login.html'))
 
+
 class Home(Resource):
     def get(self):
         return make_response(render_template('index.html'))
