@@ -110,24 +110,27 @@ nav a:hover::before {
 
 #reg-dropdown {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
 .testing1 {
     position: absolute;
-    display: flex;
+    /*display: none;*/
     flex-direction: column;
     margin-top: 1rem;
     border-radius: 15px;
-    top: 100%;
     width: 12rem;
     background-color: #27272c;
-    padding: 0.5rem 1rem;
     gap: 1rem;
     z-index: 2;
+}
+
+.testing1 ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
 }
 
 #welcome-section {
