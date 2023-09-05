@@ -2,5 +2,5 @@ import enum
 
 
 class UserRole(enum.Enum):
-    employee = "employee"
+    job_applicant = "job_applicant"
     company = "company"
