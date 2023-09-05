@@ -27,17 +27,39 @@
             <input type="password" id="password2" name="password2" placeholder="Confirm Password">
             <label for="account-type">Account Type</label>
             <div class="account-type">
-                <input type="radio" name="account-type" id="student" value="student">
-                <label for="student">Job Applicant</label>
-                <input type="radio" name="account-type" id="teacher" value="teacher">
-                <label for="teacher">Company</label>
+                <input type="radio" name="account-type" id="job-applicant" value="job-applicant">
+                <label for="job-applicant">Job Applicant</label>
+                <input type="radio" name="account-type" id="company" value="company">
+                <label for="company">Company</label>
             </div>
-            <button class="reg-btn">Register</button>
+            <div class="job-applicant">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" placeholder="First Name">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Phone Number">
+                <label for="age">Age</label>
+                <input type="month" id="age" name="age" placeholder="Age">
+            </div>
+            <div class="company">
+                <label for="company-name">Company Name</label>
+                <input type="text" id="company-name" name="company-name" placeholder="Company Name">
+                <label for="company-phone">Company Phone Number</label>
+                <input type="text" id="company-phone" name="company-phone" placeholder="Company Phone Number">
+                <label for="company-address">Company Address</label>
+                <input type="text" id="company-address" name="company-address" placeholder="Company Address">
+                <label for="company-description">Company Description</label>
+                <textarea name="company-description" id="company-description" cols="30" rows="10"
+                          placeholder="Company Description"></textarea>
+            </div>
         </form>
     </div>
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
 {% endblock %}
 {% block footer %}
 {% endblock %}
+
 
 </body>
 

@@ -112,27 +112,6 @@ nav a:hover::before {
     position: relative;
 }
 
-.testing1 {
-    position: absolute;
-    /*display: none;*/
-    flex-direction: column;
-    margin-top: 1rem;
-    border-radius: 15px;
-    width: 12rem;
-    background-color: #27272c;
-    gap: 1rem;
-    z-index: 2;
-}
-
-.testing1 ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.5rem 1rem;
-}
-
 #welcome-section {
     background-image: url("../../images/fsection-bg.jpg");
     background-size: cover;

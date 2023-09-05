@@ -23,12 +23,6 @@
         <div class="auth-nav">
             <ul>
                 <li id="reg-dropdown"><a href="http://127.0.0.1:5000/register">Register</a>
-                    <div class="testing1">
-                        <ul>
-                            <li>Job Applicant</li>
-                            <li>Company</li>
-                        </ul>
-                    </div>
                 </li>
                 <li><a href="login">Login</a></li>
             </ul>
@@ -85,8 +79,9 @@
 
         </ul>
     </footer>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
-<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
 
 </body>
 </html>
