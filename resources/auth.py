@@ -2,14 +2,27 @@ from flask import Flask, request, render_template, make_response
 from flask_restful import Resource
 
 from managers.auth import AuthManager
-from schemas.response.user import UserResponseSchema
+from schemas.response.user import UserResponseSchema, JobApplicantResponseSchema, CompanyResponseSchema
 
 
 class Register(Resource):
     def post(self):
         data = request.get_json()
-        user = AuthManager.register(data)
-        return UserResponseSchema().dump(user), 201
+        user = AuthManager.register_user(data)
+        if data['role'] == 'job_applicant':
+            job_applicant = AuthManager.register_job_applicant(data, user)
+            response_data = {
+                'user': UserResponseSchema().dump(user),
+                'job_applicant': JobApplicantResponseSchema().dump(job_applicant)
+            }
+        else:
+            company = AuthManager.register_company(data, user)
+            response_data = {
+                'user': UserResponseSchema().dump(user),
+                'company': CompanyResponseSchema().dump(company)
+            }
+
+        return response_data, 201
 
     def get(self):
         return make_response(render_template('register.html'))
