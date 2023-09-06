@@ -42,13 +42,6 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
-    caret-color: red;
-
-
-}
-
-.reg-form input:focus {
-    border: 1px solid red;
 }
 
 #account-type-lbl {
@@ -72,15 +65,21 @@ body {
 
 
 .reg-submit-btn {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     width: 30%;
     align-self: center;
     padding: 0.5rem 1rem;
     border-radius: 15px;
+    border: none;
 }
 
 .reg-submit-btn:hover {
     background-color: #C2C22FFF;
     color: #44445a;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#username-span {
+    color: red;
+    font-size: 0.8rem;
 }
