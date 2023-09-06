@@ -15,13 +15,50 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 85vh;
+    min-height: 100vh;
     flex-direction: column;
+}
+
+.reg-container h1 {
+    margin-bottom: 2rem;
+    color: #C2C22FFF;
 }
 
 .reg-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    width: 400px;
+    min-width: 200px;
+    background-color: #44445a;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 0 13px rgba(246, 246, 246, 0.5);
+}
+
+.reg-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    caret-color: red;
+
+
+}
+
+.reg-form input:focus {
+    border: 1px solid red;
+}
+
+#account-type-lbl {
+    text-align: center;
+}
+
+.account-type {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
 }
 
 .job-applicant,
@@ -29,5 +66,21 @@ body {
     display: none;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: 3px;
+
+}
+
+
+.reg-submit-btn {
+    margin-top: 1rem;
+    width: 30%;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}
+
+.reg-submit-btn:hover {
+    background-color: #C2C22FFF;
+    color: #44445a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }

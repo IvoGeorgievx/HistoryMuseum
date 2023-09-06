@@ -17,3 +17,4 @@ radioCompany.addEventListener('change', () => {
         hiddenCompanyDiv.style.display = 'flex'
     }
 })
+
