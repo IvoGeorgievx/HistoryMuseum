@@ -51,7 +51,7 @@ body {
 .account-type {
     display: flex;
     justify-content: center;
-    gap: 7px;
+    gap: 14px;
 }
 
 .job-applicant,
@@ -60,7 +60,6 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 3px;
-
 }
 
 
@@ -79,7 +78,17 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-#username-span {
+#username-span,
+#email-span,
+#password1,
+#passwordTwo {
     color: red;
     font-size: 0.8rem;
+}
+
+.account-type input[type="radio"]:not(:checked):not(:disabled) + label {
+    color: #C2C22FFF;
+    transform: scale(1.2);
+    transition: color 0.3s ease, transform 0.3s ease;
+
 }
