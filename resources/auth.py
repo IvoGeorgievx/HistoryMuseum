@@ -2,10 +2,13 @@ from flask import Flask, request, render_template, make_response
 from flask_restful import Resource
 
 from managers.auth import AuthManager
+from schemas.request.user import UserRegisterSchema
 from schemas.response.user import UserResponseSchema, JobApplicantResponseSchema, CompanyResponseSchema
+from utilities.decorators import validate_schema
 
 
 class Register(Resource):
+    @validate_schema(UserRegisterSchema)
     def post(self):
         data = request.get_json()
         user = AuthManager.register_user(data)

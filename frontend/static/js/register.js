@@ -41,21 +41,27 @@ async function register(e) {
             },
             body: JSON.stringify(body)
         })
+        const responseData = await response.json()
         if (response.status === 201) {
-            const responseData = await response.json()
             const hiddenRegDiv = document.querySelector('.reg-success')
             const regForm = document.querySelector('.reg-form')
             hiddenRegDiv.style.display = 'flex'
             regForm.style.display = 'none'
+        } else if (response.status === 400) {
+            for (const value of Object.values(responseData)) {
+                for (const val of Object.values(value).flat()) {
+                    console.log(val);
+                }
+            }
         }
-        console.log(response)
     } catch (err) {
-        console.log(err)
+        console.log(err);
     }
-
-
 }
 
+const testObj = {
+
+}
 
 const hiddenJobApplicantDiv = document.querySelector('.job-applicant')
 
