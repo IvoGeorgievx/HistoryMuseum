@@ -14,7 +14,7 @@ class UserRegisterSchema(Schema):
     age = fields.Integer(required=False)
     company_name = fields.String(required=False, validate=UserValidator.validate_unique_company_name)
     company_address = fields.String(required=False)
-    company_phone = fields.String(required=False)
+    company_phone_number = fields.String(required=False)
     company_description = fields.String(required=False)
 
 

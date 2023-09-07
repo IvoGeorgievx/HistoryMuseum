@@ -111,9 +111,26 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     min-height: 50vh;
     width: 50%;
-    color: green;
     border-radius: 25px;
+    color: #C2C22FFF;
+    animation: scaleInRegSuccess 0.25s ease;
+}
+
+.reg-success h1 {
+    font-size: 3.5rem;
+}
+
+.reg-success p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.reg-success i {
+    margin-top: 3.5rem;
+    font-size: 7.5rem;
+    color: green;
+    animation: flipUp 1.5s ease;
 }

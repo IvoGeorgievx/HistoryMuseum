@@ -49,18 +49,27 @@ async function register(e) {
             regForm.style.display = 'none'
         } else if (response.status === 400) {
             for (const value of Object.values(responseData)) {
-                for (const val of Object.values(value).flat()) {
-                    console.log(val);
+                if (value.hasOwnProperty('email')) {
+                    inputSpans.email.innerHTML = value.email
+                    userInputs.email.style.border = outlineBorders.incorrect
+                }
+                if (value.hasOwnProperty('username')) {
+                    inputSpans.username.innerHTML = value.username
+                    userInputs.username.style.border = outlineBorders.incorrect
+                }
+                if (value.hasOwnProperty('phone_number')) {
+                    inputSpans.phoneNumber.innerHTML = value.phone_number
+                    applicantInputs.phoneNumber.style.border = outlineBorders.incorrect
+                }
+                if (value.hasOwnProperty('company_name')) {
+                    inputSpans.companyName.innerHTML = value.company_name
+                    companyInputs.companyName.style.border = outlineBorders.incorrect
                 }
             }
         }
     } catch (err) {
         console.log(err);
     }
-}
-
-const testObj = {
-
 }
 
 const hiddenJobApplicantDiv = document.querySelector('.job-applicant')
