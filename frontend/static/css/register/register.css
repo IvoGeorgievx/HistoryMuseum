@@ -12,6 +12,7 @@ body {
 }
 
 .reg-container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,5 +99,21 @@ body {
     color: #C2C22FFF;
     transform: scale(1.2);
     transition: color 0.3s ease, transform 0.3s ease;
+}
 
+.reg-success {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #44445a;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 50vh;
+    width: 50%;
+    color: green;
+    border-radius: 25px;
 }

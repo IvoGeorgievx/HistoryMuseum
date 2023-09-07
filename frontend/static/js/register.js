@@ -1,3 +1,62 @@
+const API_URL = 'http://127.0.0.1:5000/register'
+
+const regButtons = document.querySelectorAll('.reg-submit-btn')
+regButtons.forEach(btn => {
+    btn.addEventListener('click', register)
+})
+
+async function register(e) {
+    e.preventDefault()
+    let body = {
+        username: userInputs.username.value,
+        email: userInputs.email.value,
+        password: userInputs.password1.value,
+    }
+
+    if (radioJobApplicant.checked) {
+        body = {
+            ...body,
+            role: 'job_applicant',
+            first_name: applicantInputs.firstName.value,
+            last_name: applicantInputs.lastName.value,
+            phone_number: applicantInputs.phoneNumber.value,
+            age: applicantInputs.age.value,
+        }
+    } else {
+        body = {
+            ...body,
+            role: 'company',
+            company_name: companyInputs.companyName.value,
+            company_phone_number: companyInputs.companyPhone.value,
+            company_address: companyInputs.companyAddress.value,
+            company_description: companyInputs.companyDescription.value,
+        }
+    }
+
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+        if (response.status === 201) {
+            const responseData = await response.json()
+            const hiddenRegDiv = document.querySelector('.reg-success')
+            const regForm = document.querySelector('.reg-form')
+            hiddenRegDiv.style.display = 'flex'
+            regForm.style.display = 'none'
+        }
+        console.log(response)
+    } catch (err) {
+        console.log(err)
+    }
+
+
+}
+
+
 const hiddenJobApplicantDiv = document.querySelector('.job-applicant')
 
 const radioJobApplicant = document.querySelector('.account-type input[id="job-applicant"]')
@@ -68,12 +127,12 @@ const userValidationRules = {
         message: 'Please enter a correct email address.',
         isValid: false
     },
-    password1 : {
+    password1: {
         validator: isValidPassword,
         message: 'Password must contain only letters and numbers and be at least 8 characters long.',
         isValid: false
     },
-    password2 : {
+    password2: {
         isValid: false
     }
 }
@@ -137,11 +196,11 @@ Object.keys(userInputs).map(inputName => {
     });
 });
 userInputs.password1.addEventListener('input', () => {
-  validatePasswords();
+    validatePasswords();
 });
 
 userInputs.password2.addEventListener('input', () => {
-  validatePasswords();
+    validatePasswords();
 });
 
 Object.keys(applicantInputs).map(inputName => {
@@ -173,19 +232,19 @@ Object.keys(companyInputs).map(inputName => {
 })
 
 function validatePasswords() {
-  const password1 = userInputs.password1.value;
-  const password2 = userInputs.password2.value;
+    const password1 = userInputs.password1.value;
+    const password2 = userInputs.password2.value;
 
-  if (!equalPasswords(password1, password2)) {
-    inputSpans.password2.innerHTML = 'Passwords do not match.';
-    userInputs.password2.style.border = outlineBorders.incorrect;
-    userValidationRules.password2.isValid = false;
-  } else {
-    inputSpans.password2.innerHTML = '';
-    userInputs.password2.style.border = outlineBorders.correct;
-    userValidationRules.password2.isValid = true;
-  }
-  updateRadioButtonsState();
+    if (!equalPasswords(password1, password2)) {
+        inputSpans.password2.innerHTML = 'Passwords do not match.';
+        userInputs.password2.style.border = outlineBorders.incorrect;
+        userValidationRules.password2.isValid = false;
+    } else {
+        inputSpans.password2.innerHTML = '';
+        userInputs.password2.style.border = outlineBorders.correct;
+        userValidationRules.password2.isValid = true;
+    }
+    updateRadioButtonsState();
 }
 
 function updateRadioButtonsState() {
@@ -222,6 +281,7 @@ function equalPasswords(password1, password2) {
 function isValidFirstNameLastName(name) {
     return /^[a-zA-Z]{2,}$/.test(name);
 }
+
 function isValidPhoneNumber(phoneNumber) {
     return /^[0-9]{10}$/.test(phoneNumber);
 }
@@ -229,6 +289,7 @@ function isValidPhoneNumber(phoneNumber) {
 function isValidAge(age) {
     return age >= 18;
 }
+
 function isValidCompanyName(companyName) {
     return /^[a-zA-Z0-9]{6,}$/.test(companyName);
 }
