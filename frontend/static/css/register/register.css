@@ -81,7 +81,15 @@ body {
 #username-span,
 #email-span,
 #password1,
-#passwordTwo {
+#passwordTwo,
+#first-name-span,
+#last-name-span,
+#phone-span,
+#age-span,
+#company-name-span,
+#company-phone-span,
+#company-address-span,
+#company-description-span {
     color: red;
     font-size: 0.8rem;
 }
