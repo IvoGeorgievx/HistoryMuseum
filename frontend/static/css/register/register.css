@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Courgette&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -113,6 +112,7 @@ body {
     flex-direction: column;
     gap: 2rem;
     min-height: 50vh;
+    min-width: 320px;
     width: 50%;
     border-radius: 25px;
     color: #C2C22FFF;
@@ -121,6 +121,7 @@ body {
 
 .reg-success h1 {
     font-size: 3.5rem;
+    text-align: center;
 }
 
 .reg-success p {

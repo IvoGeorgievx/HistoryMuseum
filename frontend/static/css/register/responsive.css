@@ -1,0 +1,22 @@
+@media (width <= 820px) {
+    body {
+        min-width: 400px;
+        font: 13px/1.5 'PT Sans', sans-serif;
+    }
+
+    .reg-success {
+        padding: 1rem;
+    }
+
+    .reg-success h1 {
+        font-size: 2.3rem;
+    }
+
+    .reg-success p {
+        font-size: 1.1rem;
+    }
+
+    .reg-success i {
+        font-size: 4rem;
+    }
+}
