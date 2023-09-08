@@ -1,4 +1,9 @@
-from werkzeug.exceptions import Unauthorized
+from datetime import timedelta, datetime
+
+import jwt
+from decouple import config
+from flask_httpauth import HTTPTokenAuth
+from werkzeug.exceptions import Unauthorized, BadRequest
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from db import db
@@ -40,3 +45,30 @@ class AuthManager:
         if not check_password_hash(user.password, data["password"]):
             raise Unauthorized("Invalid username or password")
         return user
+
+    @staticmethod
+    def encode_token(user):
+        payload = {"sub": user.id, "exp": datetime.utcnow() + timedelta(days=15)}
+        return jwt.encode(payload, key=config("JWT_SECRET_KEY"), algorithm="HS256")
+
+    @staticmethod
+    def decode_token(token):
+        try:
+            return jwt.decode(token, key=config("JWT_SECRET_KEY"), algorithms=["HS256"])
+        except Exception as ex:
+            raise BadRequest("Invalid or missing JWT token")
+
+
+auth = HTTPTokenAuth(scheme="Bearer")
+
+
+@auth.verify_token
+def verify_token(token):
+    try:
+        payload = AuthManager.decode_token(token)
+        user = User.query.filter_by(id=payload["sub"]).first()
+        if not user:
+            raise Unauthorized("Invalid or missing JWT token")
+        return user
+    except Exception as ex:
+        raise Unauthorized("Invalid or missing JWT token")

@@ -42,6 +42,7 @@ async function register(e) {
             body: JSON.stringify(body)
         })
         const responseData = await response.json()
+        console.log(responseData)
         if (response.status === 201) {
             const hiddenRegDiv = document.querySelector('.reg-success')
             const regForm = document.querySelector('.reg-form')
@@ -148,6 +149,7 @@ const userValidationRules = {
         isValid: false
     },
     password2: {
+        validator: isValidPassword,
         isValid: false
     }
 }

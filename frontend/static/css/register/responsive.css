@@ -4,6 +4,14 @@
         font: 13px/1.5 'PT Sans', sans-serif;
     }
 
+    .reg-container h1 {
+        margin-top: 7rem;
+    }
+    .reg-form {
+        width: 300px;
+        min-width: 120px;
+        padding: 1rem;
+    }
     .reg-success {
         padding: 1rem;
     }
