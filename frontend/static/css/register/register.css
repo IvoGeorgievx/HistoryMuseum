@@ -19,7 +19,7 @@ body {
     flex-direction: column;
 }
 
-.reg-container h1 {
+.auth-heading {
     margin-bottom: 2rem;
     color: #C2C22FFF;
 }

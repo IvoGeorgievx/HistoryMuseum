@@ -42,12 +42,12 @@ async function register(e) {
             body: JSON.stringify(body)
         })
         const responseData = await response.json()
-        console.log(responseData)
         if (response.status === 201) {
             const hiddenRegDiv = document.querySelector('.reg-success')
             const regForm = document.querySelector('.reg-form')
             hiddenRegDiv.style.display = 'flex'
             regForm.style.display = 'none'
+            localStorage.setItem('token', responseData.token)
         } else if (response.status === 400) {
             for (const value of Object.values(responseData)) {
                 if (value.hasOwnProperty('email')) {
