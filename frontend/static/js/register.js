@@ -43,6 +43,7 @@ async function register(e) {
         })
         const responseData = await response.json()
         if (response.status === 201) {
+            console.log(responseData)
             const hiddenRegDiv = document.querySelector('.reg-success')
             const regForm = document.querySelector('.reg-form')
             hiddenRegDiv.style.display = 'flex'

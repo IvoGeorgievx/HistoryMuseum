@@ -39,7 +39,8 @@ class Login(Resource):
     def post(self):
         data = request.get_json()
         user = AuthManager.login(data)
-        return UserResponseSchema().dump(user), 200
+        token = AuthManager.encode_token(user)
+        return UserResponseSchema().dump({"token": token}), 200
 
     def get(self):
         return make_response(render_template('login.html'))
