@@ -17,15 +17,20 @@ async function login(e) {
         }),
         headers: {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + localStorage.getItem('token')
+            // Authorization: 'Bearer ' + localStorage.getItem('token')
         }
     }).catch(error => console.log(error))
 
-    const data = await response.json().then(data => {
-        if (data.token) {
-            localStorage.setItem('token', data.token)
-            window.location.href = 'http://127.0.0.1:5000'
-        }
-    })
+    if (response.status === 200) {
+        const data = await response.json().then(data => {
+            if (data.token) {
+                localStorage.setItem('token', data.token)
+                window.location.href = 'http://127.0.0.1:5000'
+            }
+        }).catch(error => console.log(error))
+    } else {
+        alert('Invalid username or password')
+    }
+
 
 }
