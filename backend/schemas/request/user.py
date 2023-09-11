@@ -1,6 +1,6 @@
 from marshmallow import Schema, fields
 
-from schemas.validators import UserValidator
+from backend.schemas.validators import UserValidator
 
 
 class UserRegisterSchema(Schema):

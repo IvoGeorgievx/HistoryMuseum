@@ -4,8 +4,9 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_restful import Api
 
+from backend.resources.routes import routes
 from db import db
-from resources.routes import routes
+
 
 app = Flask(__name__, template_folder='frontend/templates', static_folder='frontend/static')
 

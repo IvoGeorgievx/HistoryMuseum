@@ -1,6 +1,6 @@
 from marshmallow import ValidationError
 
-from models import User, Company, JobApplicant
+from backend.models import User, Company, JobApplicant
 
 
 class UserValidator:

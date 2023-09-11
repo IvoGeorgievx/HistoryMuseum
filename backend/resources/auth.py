@@ -1,10 +1,10 @@
 from flask import request, render_template, make_response
 from flask_restful import Resource
 
-from managers.auth import AuthManager
-from schemas.request.user import UserRegisterSchema, UserLoginSchema
-from schemas.response.user import UserResponseSchema, JobApplicantResponseSchema, CompanyResponseSchema
-from utilities.decorators import validate_schema
+from backend.managers.auth import AuthManager
+from backend.schemas.request.user import UserRegisterSchema, UserLoginSchema
+from backend.schemas.response.user import UserResponseSchema, JobApplicantResponseSchema, CompanyResponseSchema
+from backend.utilities.decorators import validate_schema
 
 
 class Register(Resource):
