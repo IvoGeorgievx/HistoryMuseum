@@ -30,11 +30,11 @@
         z-index: 999;
     }
 
-    .auth-nav li {
+    .auth-nav-logged-out li {
         margin: 0 0.3rem;
     }
 
-    .auth-nav li a {
+    .auth-nav-logged-out li a {
         padding: 1rem;
         font-size: 1.3rem;
     }

@@ -20,11 +20,24 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="auth-nav">
-            <ul>
+        <div class="auth-nav-logged-out">
+            <ul class="logged-out">
                 <li id="reg-dropdown"><a href="http://127.0.0.1:5000/register">Register</a>
                 </li>
                 <li><a href="login">Login</a></li>
+            </ul>
+        </div>
+        <div class="auth-nav-logged-in">
+            <ul class="logged-in">
+                <li id="user-dropdown"><img src="{{ url_for('static', filename='images/default-user.png') }}"
+                                            alt="user">
+                    <ul class="user-dropdown">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

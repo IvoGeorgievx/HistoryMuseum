@@ -58,23 +58,34 @@ nav {
 }
 
 .main-nav li,
-.auth-nav li {
+.auth-nav-logged-out li,
+.auth-nav-logged-in li {
     list-style: none;
     margin: 0 2rem;
 }
 
+.auth-nav-logged-in img {
+    display: inline-block;
+}
+
 .main-nav li a,
-.auth-nav li a {
+.auth-nav-logged-out li a,
+.auth-nav-logged-in li a {
     text-decoration: none;
     font-size: 1.5em;
     font-weight: bold;
     color: #C2C22FFF;
 }
 
-.auth-nav ul {
+.auth-nav-logged-out ul,
+.auth-nav-logged-in ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.auth-nav-logged-in {
+    display: none;
 }
 
 nav a {
@@ -110,6 +121,10 @@ nav a:hover::before {
 
 #reg-dropdown {
     position: relative;
+}
+
+.logged-in {
+    display: none;
 }
 
 #welcome-section {
