@@ -74,8 +74,8 @@
         <p>Thank you for registering with us. You will be redirected shortly.</p>
         <i class="fa-regular fa-circle-check"></i>
     </div>
-    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/register.js') }}"></script>
+{#    <script src="{{ url_for('static', filename='js/index.js') }}"></script>#}
 {% endblock %}
 {% block footer %}
 {% endblock %}
