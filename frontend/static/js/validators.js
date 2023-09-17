@@ -100,4 +100,3 @@ function isValidAddress(address) {
 function isValidDescription(description) {
     return description.length > 10;
 }
-
