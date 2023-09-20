@@ -45,3 +45,8 @@ scrollDownBtn.addEventListener('click', () => {
 
 const regDropDown = document.querySelector("#reg-dropdown")
 
+const userDropDownMenu = document.querySelector('#user-dropdown')
+const dropDownMenu = document.querySelector('.dropdown-menu')
+userDropDownMenu.addEventListener('click', () => {
+    dropDownMenu.style.display = (dropDownMenu.style.display === 'flex') ? 'none' : 'flex';
+})
