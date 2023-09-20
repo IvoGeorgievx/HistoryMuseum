@@ -8,6 +8,20 @@ const observer = new IntersectionObserver(entries => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const token = localStorage.getItem('token');
+    const showLoggedInDiv = document.querySelector('.auth-nav-logged-in');
+    const hideLoggedOutDiv = document.querySelector('.auth-nav-logged-out');
+
+    if (token) {
+        showLoggedInDiv.style.display = 'block';
+        hideLoggedOutDiv.style.display = 'none';
+    } else {
+        showLoggedInDiv.style.display = 'none';
+        hideLoggedOutDiv.style.display = 'block';
+    }
+});
+
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((element) => observer.observe(element))
 
