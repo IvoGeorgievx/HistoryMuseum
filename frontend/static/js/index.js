@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+const logoutBtn = document.querySelector('#logout-btn');
+logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    window.location.href = "http://127.0.0.1:5000/login";
+});
+
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((element) => observer.observe(element))
 
@@ -34,7 +40,7 @@ toggleElement.addEventListener('click', () => {
 
 const scrollDownBtn = document.querySelector('.scroll-btn')
 scrollDownBtn.addEventListener('click', () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    window.scrollTo({top: window.innerHeight, behavior: 'smooth'});
 })
 
 const regDropDown = document.querySelector("#reg-dropdown")
