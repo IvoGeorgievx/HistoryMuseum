@@ -93,13 +93,26 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 5rem;
+}
+
+#user-dropdown img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+#user-dropdown img:hover {
+    cursor: pointer;
 }
 
 .user-dropdown {
     position: absolute;
+    margin-top: 0.6rem;
     top: 100%;
     right: 0;
-    width: 200px;
     background-color: #27272c;
     border-radius: 10px;
     padding: 1rem;
@@ -108,6 +121,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    z-index: 2;
 }
 
 nav a {
