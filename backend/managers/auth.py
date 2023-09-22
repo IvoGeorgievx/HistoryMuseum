@@ -6,8 +6,9 @@ from flask_httpauth import HTTPTokenAuth
 from werkzeug.exceptions import Unauthorized, BadRequest
 from werkzeug.security import check_password_hash, generate_password_hash
 
+from backend.schemas.response.user import CompanyResponseSchema, JobApplicantResponseSchema
 from db import db
-from backend.models import User, JobApplicant, Company
+from backend.models import User, JobApplicant, Company, UserRole
 
 
 class AuthManager:
@@ -45,6 +46,29 @@ class AuthManager:
         if not check_password_hash(user.password, data["password"]):
             raise Unauthorized("Invalid username or password")
         return user
+
+    @staticmethod
+    def edit_profile(user, data):
+        if user.role == UserRole.company:
+            user_instance = Company.query.filter_by(id=user.id).first()
+        else:
+            user_instance = JobApplicant.query.filter_by(id=user.id).first()
+
+        fields_to_update = ['company_name', 'company_address', 'company_phone_number',
+                            'company_description'] if user.role == UserRole.company \
+            else ['first_name', 'last_name',
+                  'phone_number', 'age']
+
+        for field in fields_to_update:
+            if field in data:
+                setattr(user_instance, field, data[field])
+
+        db.session.commit()
+
+        response_schema = CompanyResponseSchema if user.role == UserRole.company \
+            else JobApplicantResponseSchema
+
+        return user_instance, response_schema
 
     @staticmethod
     def encode_token(user):

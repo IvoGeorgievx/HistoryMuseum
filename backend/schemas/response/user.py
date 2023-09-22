@@ -1,17 +1,15 @@
 from marshmallow import Schema, fields
 
+from backend.schemas.base_edit_profile import EditProfileResponseSchema
+
 
 class UserResponseSchema(Schema):
     token = fields.String(required=True)
 
 
-class JobApplicantResponseSchema(Schema):
-    first_name = fields.String(required=True)
-    last_name = fields.String(required=True)
+class JobApplicantResponseSchema(EditProfileResponseSchema):
+    pass
 
 
-class CompanyResponseSchema(Schema):
-    company_name = fields.String(required=True)
-    company_address = fields.String(required=True)
-    company_phone_number = fields.String(required=True)
-    company_description = fields.String(required=True)
+class CompanyResponseSchema(EditProfileResponseSchema):
+    pass
