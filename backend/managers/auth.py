@@ -55,14 +55,14 @@ class AuthManager:
             user_instance = JobApplicant.query.filter_by(id=user.id).first()
 
         fields_to_update = ['company_name', 'company_address', 'company_phone_number',
-                            'company_description'] if user.role == UserRole.company \
+                            'company_description'] \
+            if user.role == UserRole.company \
             else ['first_name', 'last_name',
                   'phone_number', 'age']
 
         for field in fields_to_update:
             if field in data:
                 setattr(user_instance, field, data[field])
-
         db.session.commit()
 
         response_schema = CompanyResponseSchema if user.role == UserRole.company \
