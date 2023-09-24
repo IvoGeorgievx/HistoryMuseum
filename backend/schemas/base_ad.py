@@ -6,4 +6,3 @@ class BaseAdSchema(Schema):
     description = fields.String(required=True)
     salary = fields.Integer(required=False)
     location = fields.String(required=True)
-

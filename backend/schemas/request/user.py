@@ -5,14 +5,20 @@ from backend.schemas.validators import UserValidator
 
 
 class UserRegisterSchema(BaseUserSchema):
-    username = fields.String(required=True, unique=True, validate=UserValidator.validate_unique_username)
+    username = fields.String(
+        required=True, unique=True, validate=UserValidator.validate_unique_username
+    )
     email = fields.String(required=True, validate=UserValidator.validate_unique_email)
     role = fields.String(required=True)
     first_name = fields.String(required=False)
     last_name = fields.String(required=False)
-    phone_number = fields.String(required=False, validate=UserValidator.validate_unique_phone_number)
+    phone_number = fields.String(
+        required=False, validate=UserValidator.validate_unique_phone_number
+    )
     age = fields.Integer(required=False)
-    company_name = fields.String(required=False, validate=UserValidator.validate_unique_company_name)
+    company_name = fields.String(
+        required=False, validate=UserValidator.validate_unique_company_name
+    )
     company_address = fields.String(required=False)
     company_phone_number = fields.String(required=False)
     company_description = fields.String(required=False)
@@ -27,9 +33,13 @@ class UserEditProfileSchema(Schema):
     email = fields.String(required=False, validate=UserValidator.validate_unique_email)
     first_name = fields.String(required=False)
     last_name = fields.String(required=False)
-    phone_number = fields.String(required=False, validate=UserValidator.validate_unique_phone_number)
+    phone_number = fields.String(
+        required=False, validate=UserValidator.validate_unique_phone_number
+    )
     age = fields.Integer(required=False)
-    company_name = fields.String(required=False, validate=UserValidator.validate_unique_company_name)
+    company_name = fields.String(
+        required=False, validate=UserValidator.validate_unique_company_name
+    )
     company_address = fields.String(required=False)
     company_phone_number = fields.String(required=False)
     company_description = fields.String(required=False)

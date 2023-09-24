@@ -6,34 +6,50 @@ from flask_httpauth import HTTPTokenAuth
 from werkzeug.exceptions import Unauthorized, BadRequest
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from backend.schemas.response.user import CompanyResponseSchema, JobApplicantResponseSchema
+from backend.schemas.response.user import (
+    CompanyResponseSchema,
+    JobApplicantResponseSchema,
+)
 from db import db
 from backend.models import User, JobApplicant, Company, UserRole
 
 
 class AuthManager:
-
     @staticmethod
     def register_user(data):
-        data['password'] = generate_password_hash(data['password'], method='sha256')
-        user = User(username=data['username'], password=data['password'], email=data['email'], role=data['role'])
+        data["password"] = generate_password_hash(data["password"], method="sha256")
+        user = User(
+            username=data["username"],
+            password=data["password"],
+            email=data["email"],
+            role=data["role"],
+        )
         db.session.add(user)
         db.session.commit()
         return user
 
     @staticmethod
     def register_job_applicant(data, user):
-        job_applicant = JobApplicant(id=user.id, first_name=data['first_name'], last_name=data['last_name'],
-                                     phone_number=data['phone_number'], age=data['age'])
+        job_applicant = JobApplicant(
+            id=user.id,
+            first_name=data["first_name"],
+            last_name=data["last_name"],
+            phone_number=data["phone_number"],
+            age=data["age"],
+        )
         db.session.add(job_applicant)
         db.session.commit()
         return job_applicant
 
     @staticmethod
     def register_company(data, user):
-        company = Company(id=user.id, company_name=data['company_name'], company_address=data['company_address'],
-                          company_phone_number=data['company_phone_number'],
-                          company_description=data['company_description'])
+        company = Company(
+            id=user.id,
+            company_name=data["company_name"],
+            company_address=data["company_address"],
+            company_phone_number=data["company_phone_number"],
+            company_description=data["company_description"],
+        )
         db.session.add(company)
         db.session.commit()
         return company
@@ -54,19 +70,27 @@ class AuthManager:
         else:
             user_instance = JobApplicant.query.filter_by(id=user.id).first()
 
-        fields_to_update = ['company_name', 'company_address', 'company_phone_number',
-                            'company_description'] \
-            if user.role == UserRole.company \
-            else ['first_name', 'last_name',
-                  'phone_number', 'age']
+        fields_to_update = (
+            [
+                "company_name",
+                "company_address",
+                "company_phone_number",
+                "company_description",
+            ]
+            if user.role == UserRole.company
+            else ["first_name", "last_name", "phone_number", "age"]
+        )
 
         for field in fields_to_update:
             if field in data:
                 setattr(user_instance, field, data[field])
         db.session.commit()
 
-        response_schema = CompanyResponseSchema if user.role == UserRole.company \
+        response_schema = (
+            CompanyResponseSchema
+            if user.role == UserRole.company
             else JobApplicantResponseSchema
+        )
 
         return user_instance, response_schema
 

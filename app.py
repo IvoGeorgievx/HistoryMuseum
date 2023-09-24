@@ -8,9 +8,11 @@ from backend.resources.routes import routes
 from db import db
 
 
-app = Flask(__name__, template_folder='frontend/templates', static_folder='frontend/static')
+app = Flask(
+    __name__, template_folder="frontend/templates", static_folder="frontend/static"
+)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = (
+app.config["SQLALCHEMY_DATABASE_URI"] = (
     f"postgresql://{config('DB_USER')}:{config('DB_PASSWORD')}"
     f"@localhost:{config('DB_PORT')}/{config('DB_NAME')}"
 )
@@ -24,5 +26,5 @@ with app.app_context():
 
 [api.add_resource(*route) for route in routes]
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
