@@ -22,19 +22,13 @@ class Register(Resource):
         user = AuthManager.register_user(data)
         token = AuthManager.encode_token(user)
         if data["role"] == "job_applicant":
-            job_applicant = AuthManager.register_job_applicant(data, user)
-            response_data = {
-                "user": UserResponseSchema().dump(user),
-                "job_applicant": JobApplicantResponseSchema().dump(job_applicant),
-                "token": token,
-            }
+            AuthManager.register_job_applicant(data, user)
         else:
-            company = AuthManager.register_company(data, user)
-            response_data = {
-                "user": UserResponseSchema().dump(user),
-                "company": CompanyResponseSchema().dump(company),
-                "token": token,
-            }
+            AuthManager.register_company(data, user)
+
+        response_data = {
+            "token": token,
+        }
 
         return response_data, 201
 
