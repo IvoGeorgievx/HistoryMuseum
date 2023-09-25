@@ -1,8 +1,17 @@
 {% extends 'index.html' %}
 {% block content %}
 
-<h1> hey </h1>
+    <div class="reg-container">
+        <h1 class="auth-heading">Edit Profile</h1>
+        <form class="reg-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email">
+        </form>
+    </div>
 
 {% endblock %}
 {% block footer %}
 {% endblock %}
+
