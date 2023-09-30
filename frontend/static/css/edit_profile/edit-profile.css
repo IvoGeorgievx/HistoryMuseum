@@ -5,3 +5,14 @@
     gap: 3px;
     background-color: #44445a;
 }
+
+input[type="submit"] {
+    margin-top: 15px;
+    width: 50%;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    border: none;
+
+
+}
