@@ -22,3 +22,10 @@ input[type="submit"] {
     border: none;
 }
 
+input[type="submit"]:hover {
+    background-color: #C2C22FFF;
+    color: #44445a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+

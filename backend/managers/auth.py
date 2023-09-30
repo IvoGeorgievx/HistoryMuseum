@@ -65,25 +65,15 @@ class AuthManager:
 
     @staticmethod
     def edit_profile(user, data):
-        if user.role == UserRole.company:
-            user_instance = Company.query.filter_by(id=user.id).first()
-        else:
-            user_instance = JobApplicant.query.filter_by(id=user.id).first()
-
-        fields_to_update = (
-            [
-                "company_name",
-                "company_address",
-                "company_phone_number",
-                "company_description",
-            ]
-            if user.role == UserRole.company
-            else ["first_name", "last_name", "phone_number", "age"]
-        )
+        fields_to_update = [
+            "username",
+            "email",
+            "password",
+        ]
 
         for field in fields_to_update:
             if field in data:
-                setattr(user_instance, field, data[field])
+                setattr(user.id, field, data[field])
         db.session.commit()
 
         response_schema = (
@@ -92,7 +82,7 @@ class AuthManager:
             else JobApplicantResponseSchema
         )
 
-        return user_instance, response_schema
+        return user, response_schema
 
     @staticmethod
     def encode_token(user):

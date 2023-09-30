@@ -68,11 +68,11 @@ function isValidEmail(email) {
 }
 
 
-function isValidUsername(username) {
+export function isValidUsername(username) {
     return /^[a-zA-Z0-9]{8,}$/.test(username);
 }
 
-function isValidPassword(password) {
+export function isValidPassword(password) {
     return /^[a-zA-Z0-9]{8,}$/.test(password);
 }
 
