@@ -1,9 +1,16 @@
 .password-container {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     gap: 3px;
     background-color: #44445a;
+}
+
+.reg-form a {
+    margin-top: 15px;
+    color: white;
+    text-decoration: underline;
+    align-self: center;
 }
 
 input[type="submit"] {
@@ -13,6 +20,5 @@ input[type="submit"] {
     padding: 0.5rem 1rem;
     border-radius: 15px;
     border: none;
-
-
 }
+

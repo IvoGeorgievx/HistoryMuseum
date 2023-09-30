@@ -18,9 +18,10 @@
                 <input type="password" id="confirm-password" name="confirm-password"
                        placeholder="Confirm your new password">
             </div>
-            <input type="submit" value="Save Changes">
+            <input type="submit" id="save-changes-btn" value="Save Changes">
         </form>
     </div>
+    <script type="module" src="{{ url_for('static', filename='js/edit-profile.js') }}"></script>
 
 {% endblock %}
 {% block footer %}
