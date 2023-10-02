@@ -9,8 +9,6 @@ from backend.schemas.request.user import (
 )
 from backend.schemas.response.user import (
     UserResponseSchema,
-    JobApplicantResponseSchema,
-    CompanyResponseSchema,
 )
 from backend.utilities.decorators import validate_schema
 

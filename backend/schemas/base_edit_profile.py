@@ -1,5 +1,5 @@
 from marshmallow import Schema, fields
 
 
-class EditProfileResponseSchema(Schema):
+class BaseEditProfileResponseSchema(Schema):
     message = fields.String(required=True)

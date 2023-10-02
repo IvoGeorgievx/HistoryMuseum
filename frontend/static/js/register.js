@@ -53,9 +53,14 @@ async function register(e) {
             console.log(responseData)
             const hiddenRegDiv = document.querySelector('.reg-success')
             const regForm = document.querySelector('.reg-form')
+            const authDiv = document.querySelector('.auth-nav-logged-out')
             hiddenRegDiv.style.display = 'flex'
             regForm.style.display = 'none'
+            authDiv.style.display = 'none'
             localStorage.setItem('token', responseData.token)
+            setTimeout(() => {
+                window.location.href = 'http://127.0.0.1:5000'
+            }, 4000)
         } else if (response.status === 400) {
             for (const value of Object.values(responseData)) {
                 if (value.hasOwnProperty('email')) {

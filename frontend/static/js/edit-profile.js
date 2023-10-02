@@ -23,6 +23,12 @@ function showChangePwdForm() {
 
 async function editProfile(e) {
     e.preventDefault()
+
+    // if (inputFields.newPassword.value !== inputFields.confirmPassword.value
+    //     || inputFields.newPassword.value === '' || inputFields.confirmPassword.value === '') {
+    //     alert('Passwords do not match!')
+    //     return
+    // }
     const data = {
         username: inputFields.newUsername.value,
         email: inputFields.newEmail.value,

@@ -6,12 +6,9 @@ from flask_httpauth import HTTPTokenAuth
 from werkzeug.exceptions import Unauthorized, BadRequest
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from backend.schemas.response.user import (
-    CompanyResponseSchema,
-    JobApplicantResponseSchema,
-)
+from backend.models import User, JobApplicant, Company
+from backend.schemas.response.user import UserEditProfileResponseSchema
 from db import db
-from backend.models import User, JobApplicant, Company, UserRole
 
 
 class AuthManager:
@@ -76,13 +73,7 @@ class AuthManager:
                 setattr(user, field, data[field])
         db.session.commit()
 
-        response_schema = (
-            CompanyResponseSchema
-            if user.role == UserRole.company
-            else JobApplicantResponseSchema
-        )
-
-        return user, response_schema
+        return user, UserEditProfileResponseSchema
 
     @staticmethod
     def encode_token(user):
