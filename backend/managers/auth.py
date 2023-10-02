@@ -73,7 +73,7 @@ class AuthManager:
 
         for field in fields_to_update:
             if field in data:
-                setattr(user.id, field, data[field])
+                setattr(user, field, data[field])
         db.session.commit()
 
         response_schema = (

@@ -21,7 +21,6 @@ function showChangePwdForm() {
     passwordDiv.style.display = (passwordDiv.style.display === 'none') ? 'flex' : 'none'
 }
 
-
 async function editProfile(e) {
     e.preventDefault()
     const data = {
