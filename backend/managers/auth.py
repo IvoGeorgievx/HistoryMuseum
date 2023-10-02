@@ -70,6 +70,8 @@ class AuthManager:
 
         for field in fields_to_update:
             if field in data:
+                if field == "password":
+                    data[field] = generate_password_hash(data[field], method="sha256")
                 setattr(user, field, data[field])
         db.session.commit()
 

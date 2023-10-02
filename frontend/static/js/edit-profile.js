@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/edit_profile'
+const API_URL = 'http://127.0.0.1:5000/edit_profile'
 
 const inputFields = {
     newUsername: document.querySelector('#new-username'),
@@ -47,7 +47,7 @@ async function editProfile(e) {
     ).then(response => {
             if (response.status === 200) {
                 alert('Changes saved successfully!')
-                window.location.href = 'http://localhost:5000'
+                window.location.href = 'http://127.0.0.1:5000'
             }
         }
     ).catch(error => console.log(error))
