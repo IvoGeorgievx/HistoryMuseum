@@ -24,6 +24,8 @@ function showChangePwdForm() {
 async function editProfile(e) {
     e.preventDefault()
 
+    // TODO: add validations for inputs
+    
     // if (inputFields.newPassword.value !== inputFields.confirmPassword.value
     //     || inputFields.newPassword.value === '' || inputFields.confirmPassword.value === '') {
     //     alert('Passwords do not match!')
