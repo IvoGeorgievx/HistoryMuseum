@@ -9,3 +9,7 @@ class UserResponseSchema(Schema):
 
 class UserEditProfileResponseSchema(BaseEditProfileResponseSchema):
     pass
+
+
+class UserRoleResponseSchema(Schema):
+    role = fields.String(required=True)

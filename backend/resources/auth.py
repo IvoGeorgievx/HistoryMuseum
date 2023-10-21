@@ -9,6 +9,7 @@ from backend.schemas.request.user import (
 )
 from backend.schemas.response.user import (
     UserResponseSchema,
+    UserRoleResponseSchema,
 )
 from backend.utilities.decorators import validate_schema
 
@@ -58,3 +59,13 @@ class EditProfile(Resource):
 
     def get(self):
         return make_response(render_template("edit_profile.html"))
+
+
+class GetProfileRole(Resource):
+    @auth.login_required
+    def get(self):
+        user = auth.current_user()
+        if user.role == "job_applicant":
+            return {"role": "job_applicant"}, 200
+        return {"role": "company"}, 200
+

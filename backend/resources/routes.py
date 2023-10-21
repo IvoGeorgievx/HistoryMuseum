@@ -1,5 +1,5 @@
 from backend.resources.ads import CreateAd
-from backend.resources.auth import Register, Login, EditProfile
+from backend.resources.auth import Register, Login, EditProfile, GetProfileRole
 from backend.resources.index import Home
 
 routes = (
@@ -8,4 +8,5 @@ routes = (
     (Login, "/login"),
     (EditProfile, "/edit_profile"),
     (CreateAd, "/create_ad"),
+    (GetProfileRole, "/profile/role"),
 )
