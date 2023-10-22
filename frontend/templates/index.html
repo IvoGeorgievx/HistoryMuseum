@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>JobSpot</title>
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <i class="fa-solid fa-bars" id="nav-bars"></i>
-        <ul class="main-nav">
+    <header>
+        <nav>
+            <i class="fa-solid fa-bars" id="nav-bars"></i>
+            <ul class="main-nav">
 
-            <li><a href="http://127.0.0.1:5000">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="auth-nav-logged-out">
-            <ul class="logged-out">
-                <li id="reg-dropdown"><a href="http://127.0.0.1:5000/register">Register</a>
-                </li>
-                <li><a href="login">Login</a></li>
+                <li><a href="http://127.0.0.1:5000">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-        <div class="auth-nav-logged-in">
-            <ul class="logged-in">
-                <li id="user-dropdown"><img src="{{ url_for('static', filename='images/default-user.png') }}"
-                                            alt="user">
-                    <ul class="dropdown-menu" style="display: none">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Ads</a></li>
-                        <li><a href="#">Applications</a></li>
-                        <li><a id="logout-btn" href="#">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-{% block content %}
+            <div class="auth-nav-logged-out">
+                <ul class="logged-out">
+                    <li id="reg-dropdown"><a href="http://127.0.0.1:5000/register">Register</a>
+                    </li>
+                    <li><a href="login">Login</a></li>
+                </ul>
+            </div>
+            <div class="auth-nav-logged-in">
+                <ul class="logged-in">
+                    <li id="user-dropdown"><img src="{{ url_for('static', filename='images/default-user.png') }}"
+                            alt="user">
+                        <ul class="dropdown-menu" style="display: none">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Ads</a></li>
+                            <li><a href="#">Applications</a></li>
+                            <li><a id="logout-btn" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {% block content %}
     <section class="hidden" id="welcome-section">
         <h1 class="animated-heading">
             <span>J</span>
@@ -79,22 +81,23 @@
         </div>
     </section>
 
-{% endblock %}
-{% block footer %}
+    {% endblock %}
+    {% block footer %}
     <footer class="index-footer">
         <ul class="icons">
             <li><a href="https://github.com/IvoGeorgievx"><i class="fa-brands fa-github"></i></a></li>
             <li><a href="https://www.linkedin.com/in/ivaylo-georgiev-9a5882207/"><i
-                    class="fa-brands fa-linkedin"></i></a></li>
+                        class="fa-brands fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
 
         </ul>
     </footer>
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-{% endblock %}
+    <script type="module" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    {% endblock %}
 
 
 </body>
+
 </html>

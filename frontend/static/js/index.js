@@ -1,3 +1,5 @@
+import { createElement } from "./helpers.js";
+
 const observer = new IntersectionObserver((entries) => {
 	entries.forEach((entry) => {
 		if (entry.isIntersecting) {
@@ -51,4 +53,25 @@ const dropDownMenu = document.querySelector(".dropdown-menu");
 userDropDownMenu.addEventListener("click", () => {
 	dropDownMenu.style.display =
 		dropDownMenu.style.display === "flex" ? "none" : "flex";
+});
+
+let profile = localStorage.getItem("role");
+
+const profileOptions = [
+	"Profile",
+	"My Company",
+	"My Ads",
+	"Edit Profile",
+	"Logout",
+]
+	? profile === "company"
+	: ["Profile", "Ads", "Applications", "Edit Profile", "Logout"];
+
+profileOptions.forEach((option) => {
+	const li = createElement("li", option, [], "", userDropDownMenu);
+	if (option === "Logout") {
+		createElement("a", "", [], "logout-btn", li);
+	} else {
+		createElement("a", "", [], "", li);
+	}
 });

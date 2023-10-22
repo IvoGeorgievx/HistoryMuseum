@@ -1,3 +1,6 @@
+import { createProfileMenu, getProfileRole } from "./helpers.js";
+
+const MAIN_API_URL = "http://127.0.0.1:5000";
 const API_URL = "http://127.0.0.1:5000/login";
 
 const usernameInput = document.querySelector("input[name='username']");
@@ -22,24 +25,15 @@ async function login(e) {
 
 	if (response.status === 200) {
 		await response.json().then((data) => {
+			console.log(data);
 			if (data.token) {
 				localStorage.setItem("token", data.token);
-				window.location.href = "http://127.0.0.1:5000";
 			}
-
-			console.log(showLoggedInDiv, hideLoggedOutDiv);
 		});
-		await fetch(API_GET_ROLE, {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: "Bearer " + data.token,
-			},
-		})
-			.then((response) => response.json())
-			.then((data) => {
-				localStorage.setItem("role", data.role);
-			});
+		await getProfileRole().then(() => {
+			window.location.href = MAIN_API_URL;
+			createProfileMenu();
+		});
 	} else {
 		await response
 			.json()
