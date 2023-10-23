@@ -1,4 +1,4 @@
-import { createProfileMenu, getProfileRole } from "./helpers.js";
+import { getProfileRole } from "./helpers.js";
 
 const MAIN_API_URL = "http://127.0.0.1:5000";
 const API_URL = "http://127.0.0.1:5000/login";
@@ -32,7 +32,7 @@ async function login(e) {
 		});
 		await getProfileRole().then(() => {
 			window.location.href = MAIN_API_URL;
-			createProfileMenu();
+			// createProfileMenu();
 		});
 	} else {
 		await response

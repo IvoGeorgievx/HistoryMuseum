@@ -67,5 +67,5 @@ class GetProfileRole(Resource):
         user = auth.current_user()
         if user.role == "job_applicant":
             return UserRoleResponseSchema().dump({"role": "job_applicant"}), 200
-        return UserRoleResponseSchema().dump({"role": "job_applicant"}), 200
+        return UserRoleResponseSchema().dump({"role": "company"}), 200
 

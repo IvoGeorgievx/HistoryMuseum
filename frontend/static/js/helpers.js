@@ -13,7 +13,7 @@ export async function getProfileRole() {
 		if (response.status === 200) {
 			const data = await response.json();
 
-			localStorage.setItem("role", data.role); // Store the role in localStorage.
+			localStorage.setItem("role", data.role);
 		} else {
 			console.log("Failed to retrieve the user role");
 		}
@@ -43,25 +43,8 @@ export function createElement(type, content, classes, id, parent) {
 	return element;
 }
 
-export function createProfileMenu() {
-	let profile = localStorage.getItem("role");
-
-	const profileOptions = [
-		"Profile",
-		"My Company",
-		"My Ads",
-		"Edit Profile",
-		"Logout",
-	]
-		? profile === "company"
-		: ["Profile", "Ads", "Applications", "Edit Profile", "Logout"];
-
-	profileOptions.forEach((option) => {
-		const li = createElement("li", option, [], "", userDropDownMenu);
-		if (option === "Logout") {
-			createElement("a", "", [], "logout-btn", li);
-		} else {
-			createElement("a", "", [], "", li);
-		}
-	});
-}
+// export function logout() {
+// 	localStorage.removeItem("token");
+// 	localStorage.removeItem("role");
+// 	window.location.href = "http://127.0.0.1:5000/login";
+// }

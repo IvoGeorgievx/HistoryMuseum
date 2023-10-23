@@ -34,10 +34,10 @@
                     <li id="user-dropdown"><img src="{{ url_for('static', filename='images/default-user.png') }}"
                             alt="user">
                         <ul class="dropdown-menu" style="display: none">
-                            <li><a href="#">Profile</a></li>
+                            <!-- <li><a href="#">Profile</a></li>
                             <li><a href="#">Ads</a></li>
                             <li><a href="#">Applications</a></li>
-                            <li><a id="logout-btn" href="#">Logout</a></li>
+                            <li><a id="logout-btn" href="#">Logout</a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -95,6 +95,9 @@
         </ul>
     </footer>
     <script type="module" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/helpers.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/login.js') }}"></script>
+
     {% endblock %}
 
 

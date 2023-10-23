@@ -24,13 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
-const logoutBtn = document.querySelector("#logout-btn");
-logoutBtn.addEventListener("click", () => {
-	localStorage.removeItem("token");
-	localStorage.removeItem("role");
-	window.location.href = "http://127.0.0.1:5000/login";
-});
-
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((element) => observer.observe(element));
 
@@ -55,23 +48,45 @@ userDropDownMenu.addEventListener("click", () => {
 		dropDownMenu.style.display === "flex" ? "none" : "flex";
 });
 
-let profile = localStorage.getItem("role");
+document.addEventListener("DOMContentLoaded", () => {
+	let profile = localStorage.getItem("role");
 
-const profileOptions = [
-	"Profile",
-	"My Company",
-	"My Ads",
-	"Edit Profile",
-	"Logout",
-]
-	? profile === "company"
-	: ["Profile", "Ads", "Applications", "Edit Profile", "Logout"];
+	let profileOptions;
 
-profileOptions.forEach((option) => {
-	const li = createElement("li", option, [], "", userDropDownMenu);
-	if (option === "Logout") {
-		createElement("a", "", [], "logout-btn", li);
+	if (profile === "company") {
+		profileOptions = [
+			"Profile",
+			"My Company",
+			"My Ads",
+			"Edit Profile",
+			"Logout",
+		];
 	} else {
-		createElement("a", "", [], "", li);
+		profileOptions = [
+			"Profile",
+			"Ads",
+			"Applications",
+			"Edit Profile",
+			"Logout",
+		];
 	}
+
+	profileOptions.forEach((option) => {
+		const li = createElement("li", "", [], "", dropDownMenu);
+		const anchor = createElement(
+			"a",
+			option,
+			[],
+			option === "Logout" ? "logout-btn" : "",
+			li
+		);
+		anchor.href = "#";
+	});
+
+	const logoutBtn = document.querySelector("#logout-btn");
+	logoutBtn.addEventListener("click", () => {
+		localStorage.removeItem("token");
+		localStorage.removeItem("role");
+		window.location.href = "http://127.0.0.1:5000/login";
+	});
 });
