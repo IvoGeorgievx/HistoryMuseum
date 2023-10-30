@@ -47,20 +47,6 @@ class Login(Resource):
         return make_response(render_template("login.html"))
 
 
-class EditProfile(Resource):
-    @auth.login_required
-    @validate_schema(UserEditProfileSchema)
-    def put(self):
-        user = auth.current_user()
-        data = request.get_json()
-        user, schema = AuthManager.edit_profile(user, data)
-        response_json = {"message": "Profile updated successfully"}
-        return schema().dump(response_json), 200
-
-    def get(self):
-        return make_response(render_template("edit_profile.html"))
-
-
 class GetProfileRole(Resource):
     @auth.login_required
     def get(self):
@@ -68,4 +54,3 @@ class GetProfileRole(Resource):
         if user.role == "job_applicant":
             return UserRoleResponseSchema().dump({"role": "job_applicant"}), 200
         return UserRoleResponseSchema().dump({"role": "company"}), 200
-
